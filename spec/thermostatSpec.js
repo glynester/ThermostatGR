@@ -54,5 +54,17 @@ beforeEach(function() {
     expect(thermostat.temp).toEqual(20);
   });
 
+  it("should return the energy usage", function(){
+    for (var i=1;i<=5; i++){thermostat.turnDown();}
+    thermostat.getUsage();
+    expect(thermostat.usage).toEqual("low");
+    for (var i=1;i<=7; i++){thermostat.turnUp();}
+    thermostat.getUsage();
+    expect(thermostat.usage).toEqual("medium");
+    for (var i=1;i<=7; i++){thermostat.turnUp();}
+    thermostat.getUsage();
+    expect(thermostat.usage).toEqual("high");
+  })
+
 
 });
