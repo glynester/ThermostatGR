@@ -10,4 +10,9 @@ beforeEach(function() {
     expect(thermostat.temp).toEqual(20);
   });
 
+  it("should increase the temp by 1 when the up function is run", function(){
+    thermostat.turnUp();
+    expect(thermostat.temp).toEqual(21);
+  });
+
 });
