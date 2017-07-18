@@ -35,5 +35,13 @@ beforeEach(function() {
     expect(thermostat.temp).toEqual(25);
   });
 
+  it("should have a maximum temp of 32, with power save mode off",function(){
+    thermostat.psmOff();
+    for (var i=1;i<=15; i++){
+      thermostat.turnUp();
+    }
+    expect(thermostat.temp).toEqual(32);
+  });
+
 
 });
