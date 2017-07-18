@@ -3,11 +3,10 @@ function Thermostat() {
   this.MAXTEMP_WITH_PSM = 25;
   this.psm = true;
   this.MAXTEMP_WITHOUT_PSM = 32;
-
+  this.RESET_TEMP = 20;
 }
 Thermostat.prototype.turnOn = function() {
-  this.temp = 20;
-  this.psm = true;
+  this.temp = this.RESET_TEMP;
 }
 
 Thermostat.prototype.turnUp = function() {
@@ -30,4 +29,8 @@ Thermostat.prototype.psmOn = function() {
 
 Thermostat.prototype.psmOff = function() {
     this.psm = false
+}
+
+Thermostat.prototype.reset = function(){
+  this.temp = this.RESET_TEMP;
 }

@@ -43,5 +43,16 @@ beforeEach(function() {
     expect(thermostat.temp).toEqual(32);
   });
 
+  it("should have psm mode on by default", function(){
+    expect(thermostat.psm).toEqual(true);
+  })
+
+  it("shold reset temp to 20 when reset is activated", function(){
+    for (var i=1;i<=15; i++){thermostat.turnUp();}
+    for (var i=1;i<=3; i++){thermostat.turnDown();}
+    thermostat.reset();
+    expect(thermostat.temp).toEqual(20);
+  });
+
 
 });
