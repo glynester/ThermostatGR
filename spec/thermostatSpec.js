@@ -15,4 +15,8 @@ beforeEach(function() {
     expect(thermostat.temp).toEqual(21);
   });
 
+  it("should decrease the temp by 1 when the down function is run", function (){
+    thermostat.turnDown();
+    expect(thermostat.temp).toEqual(19);
+
 });
