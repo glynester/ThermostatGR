@@ -27,5 +27,13 @@ beforeEach(function() {
     expect(thermostat.temp).toEqual(10);
   });
 
+  it("should hava a maximum temp of 25, with power save mode on", function(){
+    thermostat.psmOn();
+    for (var i=1;i<=15; i++){
+      thermostat.turnUp();
+    }
+    expect(thermostat.temp).toEqual(25);
+  });
+
 
 });
