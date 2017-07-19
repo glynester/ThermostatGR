@@ -13,14 +13,18 @@ $(document).ready(function(){
   $("#Power_save_mode").click(function(){
     if (thermostat.psm == true){
       thermostat.psmOff();
+      $("#Power_save_mode").html("PSM OFF");
     } else {
       thermostat.psmOn();
+      $("#Power_save_mode").html("PSM ON");
       if (thermostat.temp> thermostat.MAXTEMP_WITH_PSM){
         thermostat.temp = thermostat.MAXTEMP_WITH_PSM
       }
     }
-
-
+    $("#temperature").val(thermostat.temp);
+  })
+  $("#reset").click(function(){
+    thermostat.reset();
     $("#temperature").val(thermostat.temp);
   })
 
