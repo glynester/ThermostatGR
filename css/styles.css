@@ -1,0 +1,14 @@
+button {
+    color: red;
+    text-align: center;
+}
+
+p {
+  color: blue;
+  text-align: center;
+}
+
+div {
+  width: 700px;
+  margin: 0 auto;
+}
