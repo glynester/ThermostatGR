@@ -3,15 +3,17 @@
 function Thermostat() {
   this.MINTEMP = 10;
   this.MAXTEMP_WITH_PSM = 25;
-  this.psm = true;
+  this.psm = "";
   this.MAXTEMP_WITHOUT_PSM = 32;
   this.RESET_TEMP = 20;
   this.usage = "";
   this.MEDIUM_USAGE_LIMIT = 18;
   this.HIGH_USAGE_LIMIT = 25;
+  this.maxTemp = "";
 }
 Thermostat.prototype.turnOn = function() {
   this.temp = this.RESET_TEMP;
+  this.psmOn();
 }
 
 Thermostat.prototype.turnUp = function() {
@@ -28,11 +30,13 @@ Thermostat.prototype.turnDown = function() {
   }
 }
 Thermostat.prototype.psmOn = function() {
-  this.psm = true
+  this.psm = true;
+  this.maxTemp = this.MAXTEMP_WITH_PSM;
 }
 
 Thermostat.prototype.psmOff = function() {
-    this.psm = false
+  this.psm = false;
+  this.maxTemp = this.MAXTEMP_WITHOUT_PSM;
 }
 
 Thermostat.prototype.reset = function(){
@@ -42,9 +46,12 @@ Thermostat.prototype.reset = function(){
 Thermostat.prototype.getUsage = function(){
   if (this.temp<  this.MEDIUM_USAGE_LIMIT){
     this.usage ="low";
+    // return "low";
   } else if (this.temp< this.HIGH_USAGE_LIMIT){
     this.usage ="medium";
+    // return "medium";
   } else {
     this.usage ="high";
+    // return "high";
   }
 }

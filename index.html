@@ -7,19 +7,34 @@
   <meta name="Ross and Glenn" content="SitePoint">
 
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+
+  <link rel="stylesheet" href="css/jquery-ui-slider-pips.css">
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
 </head>
 
 <body>
-<div>
-  <p>Thermostat</p>
-  <button id="increase_temp">+</button>
-  <button id="decrease_temp">-</button>
-  <button id="Power_save_mode">PSM ON</button>
-  <button id="reset">RESET</button>
-  <input type="text" id="temperature"><br>
+<div id="appContainer">
+  <div id="app">
+    <p id="appTitle">Thermostat</p>
+    <div>
+      <div class="slider"></div>
+      <img id="ThermometerImg" src="img/thermometer.png" alt="Thermometer">
+    </div>
+
+    <button id="increase_temp"><img class="iconImg" src="img/up.svg" alt="Up"></button>
+    <button id="decrease_temp"><img class="iconImg" src="img/down.svg" alt="Down"></button>
+    <button id="Power_save_mode">PSM ON</button>
+    <button id="reset">RESET</button>
+    <input type="text" id="temperature"><br>
+    <div style= "height:20px"><p id = "message"></p></div>
+  </div>
 </div>
+  <script src="src/jquery-ui-slider-pips.js"></script>
   <script src="src/controller.js"></script>
   <script src="src/thermostat.js"></script>
 </body>
